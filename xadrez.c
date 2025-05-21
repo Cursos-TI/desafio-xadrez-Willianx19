@@ -1,51 +1,35 @@
 #include <stdio.h>
 
-int main() {
-
-//Variaveis
-int torre = 1;
-int rainha = 1;
-int cavalo = 1;
-
-//Deixei as estruturas comentada para não rodar tudo de vez
-
-//Peça bispo com a estrutura For:
-/*
-for(int i = 1; i <= 5; i++)
+//Movimento da peça Bispo com recursivo e loop aninhado;
+void recursivo(int bispo)
 {
-printf("Bispo: para cima \n");
-printf("Bispo: para direita \n");
-}*/
+    if(bispo > 0)
+    {
+    for(int i = 0; i < 1; i++)
+    {
+    printf("Bispo para cima \n");
 
-//Peca Torre com a estrutura While:
-/*
-while (torre <= 5)
-{
-printf("Torre: para a direita \n");
-torre++;
-}*/
+    for(int j = 0; j < 2; j++)
+    {
+    printf("Bispo: para direita \n");
+    recursivo(bispo -1);
 
-//Peça rainha com a estrutura Do While
-/*
-do
-{
-printf("Rainha: para esquerda \n");
-rainha++;
-
-}while(rainha <= 5);
-*/
-
-for(int i = 1; i <= 1; i++){
-    printf("Cavalo: Baixo \n");
-    
-    while(cavalo <= 2){
-    printf("Cavalo: Esquerda \n");
-
-    cavalo++;
     }
+    }
+    }
+}
+
+void recursivo2(int torre)
+{
 
 }
 
+int main() {
+
+//Variaveis
+int movimento = 5;
+
+recursivo(movimento);
 
 
     return 0;
